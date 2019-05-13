@@ -21,6 +21,17 @@ public class Warrior {
         this.shield = shield;
     }
 
+    public String toString() {
+        return "Your Warrior's description : \n" +
+                "Warrior's name : " + this.name + "\n" +
+                "Warrior's image : " + this.image + "\n" +
+                "Warrior's stamina : " + this.stamina + "\n" +
+                "Warrior's strength : " + this.strength + "\n" +
+                "Warrior's weapon : " + this.weapon.getName() + " ( strength : " + this.weapon.getStrength() + " )\n" +
+                "Warrior's shield : " + this.shield
+                ;
+    }
+
     //setters
 
     public void setName(String name) {

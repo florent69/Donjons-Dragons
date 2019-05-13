@@ -21,6 +21,17 @@ public class Magician {
         this.philter = philter;
     }
 
+    public String toString() {
+        return "Your Magician's description : \n" +
+                "Magician's name : " + this.name + "\n" +
+                "Magician's image : " + this.image + "\n" +
+                "Magician's stamina : " + this.stamina + "\n" +
+                "Magician's strength : " + this.strength + "\n" +
+                "Magician's spell : " + this.spell.getName() + " ( strength : " + this.spell.getStrength() + " )\n" +
+                "Magician's philter : " + this.philter
+                ;
+    }
+
     public void setName(String name) {
         this.name = name;
     }

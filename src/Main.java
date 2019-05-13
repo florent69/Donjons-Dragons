@@ -7,11 +7,9 @@ public class Main {
 
     public static void main(String[] args) {
         setCharacter();
-
     }
 
     public static void setCharacter() {
-
         String characterChoice;
         do {
             characterChoice = askQuestion("Warrior or Magician ");  // Type of character
@@ -30,12 +28,14 @@ public class Main {
                     String warriorShield = askQuestion("Shield's name "); // Character's shield
                     // Instanced warrior
                     Warrior newWarrior = new Warrior(warriorName, warriorImage, warriorStamina, warriorStrength, weaponName, weaponStrength, warriorShield);
+                    System.out.println(newWarrior.toString());
                     break;
 
                 case "Magician":
                     String magicianName = askQuestion("Magician's name "); // magician's name
                     String magicianImage = askQuestion("Magician's image "); // Character's image
-                    int magicianStamina = numberBetween(3, 6); // Stamina
+                    int magicianStamina = numberBetween(3, 6);
+                    System.out.println("Random Warrior's stamina : " + magicianStamina); // Stamina
                     int magicianStrength = numberBetween(8, 15);
                     System.out.println("Random Magician's strength : " + magicianStrength); // strength
                     String spellName = askQuestion("Spell's name "); // spell's name
@@ -43,14 +43,16 @@ public class Main {
                     String magicianPhilter = askQuestion("Magician's philter "); // magician's philter
                     // Instanced Magician
                     Magician newMagician = new Magician(magicianName, magicianImage, magicianStamina, magicianStrength, spellName, spellStrength, magicianPhilter);
+                    System.out.println(newMagician.toString());
                     break;
-                    
+
                 default:
                     System.out.println("You have to choose between Warrior or Magician... Try again !!");
                     setCharacter();
             }
             break;
         } while(characterChoice.equalsIgnoreCase("Warrior") || characterChoice.equalsIgnoreCase("Magician"));
+
     }
 
     public static String askQuestion(String question) {
@@ -62,9 +64,10 @@ public class Main {
     }
 
     public static int numberBetween(int min, int max) {
-                int randomNum = (int)(Math.random() * (max - min)) + min ;
-                return randomNum;
+        int randomNum = (int)(Math.random() * (max - min)) + min ;
+        return randomNum;
     }
+
 
 }
 
