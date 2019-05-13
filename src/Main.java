@@ -11,102 +11,60 @@ public class Main {
     }
 
     public static void setCharacter() {
-        Scanner sc = new Scanner(System.in);
+
         String characterChoice;
-        String warriorName;
-        String magicianName;
-        String warriorImage;
-        String magicianImage;
-        int warriorStamina;
-        int magicianStamina;
-        int warriorStrength;
-        int magicianStrength;
-        // variable for Warrior
-        String weaponName;
-        int weaponStrength;
-        String warriorShield;
-        // variable for Magician
-        String spellName;
-        int spellStrength;
-        String magicianPhilter;
         do {
-            // Type of character
-            System.out.println("Choose your character : Warrior or Magician ?");
-            characterChoice = sc.nextLine();
-            System.out.println("Your choice is : " + characterChoice);
+            characterChoice = askQuestion("Warrior or Magician ");  // Type of character
 
             switch(characterChoice) {
                 case "Warrior":
-                    // warrior's name
-                    System.out.println("A name for your character ? ");
-                    warriorName = sc.nextLine();
-                    System.out.println(warriorName + " is born !");
-                    // Character's image
-                    System.out.println("Your character image ? set a URL ");
-                    warriorImage = sc.nextLine();
-                    System.out.println("URL is: " + warriorImage);
-                    // stamina
-                    System.out.println("Character's stamina ? Set a number between 5 and 10 !");
-                    warriorStamina = sc.nextInt();
-                    System.out.println("Your character's life is " + warriorStamina);
-                    // strength
-                    System.out.println("Character's strength ? Set a number between 5 and 10 !");
-                    warriorStrength = sc.nextInt();
-                    System.out.println("Your character's strength is " + warriorStrength);
-                    // Weapon's name
-                    System.out.println("Choose a weapon : What is its name ?");
-                    sc.nextLine();
-                    weaponName = sc.nextLine();
-                    System.out.println("Your choice is : " + weaponName);
-                    // Weapon's strength
-                    System.out.println("Choose a weapon : What is its strength ?");
-                    weaponStrength = sc.nextInt();
-                    System.out.println("Your choice is : " + weaponStrength);
-                    // Character's shield
-                    System.out.println("Choose a shield : What is its name ?");
-                    sc.nextLine();
-                    warriorShield = sc.nextLine();
-                    System.out.println("Your choice is : " + warriorShield);
+                    String warriorName = askQuestion("Warrior's name ");  // name
+                    String warriorImage = askQuestion("Warrior's image "); // image
+                    int warriorStamina = numberBetween(5, 10);
+                    System.out.println("Random Warrior's stamina : " + warriorStamina); // stamina
+                    int warriorStrength = numberBetween(5, 10);
+                    System.out.println("Random Warrior's strength : " + warriorStrength); // strength
+                    String weaponName = askQuestion("Weapon's name "); // Weapon's name
+                    int weaponStrength = numberBetween(0, 10);
+                    System.out.println("Random Weapon's strength : " + weaponStrength); // Weapon's strength
+                    String warriorShield = askQuestion("Shield's name "); // Character's shield
                     // Instanced warrior
                     Warrior newWarrior = new Warrior(warriorName, warriorImage, warriorStamina, warriorStrength, weaponName, weaponStrength, warriorShield);
                     break;
+
                 case "Magician":
-                    // magician's name
-                    System.out.println("A name for your character ? ");
-                    magicianName = sc.nextLine();
-                    System.out.println(magicianName + " is alive !");
-                    // Character's image
-                    System.out.println("Your character image ? set a URL ");
-                    magicianImage = sc.nextLine();
-                    System.out.println("URL is: " + magicianImage);
-                    // Stamina
-                    System.out.println("Character's stamina ? Set a number between 3 and 6 !");
-                    magicianStamina = sc.nextInt();
-                    System.out.println("Your character's life is " + magicianStamina);
-                    // strength
-                    System.out.println("Character's strength ? Set a number between 8 and 15 !");
-                    magicianStrength = sc.nextInt();
-                    System.out.println("Your character's strength is " + magicianStrength);
-                    // spell's name
-                    System.out.println("Choose a spell : What is its name ?");
-                    sc.nextLine();
-                    spellName = sc.nextLine();
-                    System.out.println("Your choice is : " + spellName);
-                    // spell's strength
-                    System.out.println("Choose a spell : What is its strength ?");
-                    spellStrength = sc.nextInt();
-                    System.out.println("Your choice is : " + spellStrength);
-                    // Character's shield
-                    System.out.println("Choose a shield : What is its name ?");
-                    sc.nextLine();
-                    magicianPhilter = sc.nextLine();
-                    System.out.println("Your shield's name is : " + magicianPhilter);
+                    String magicianName = askQuestion("Magician's name "); // magician's name
+                    String magicianImage = askQuestion("Magician's image "); // Character's image
+                    int magicianStamina = numberBetween(3, 6); // Stamina
+                    int magicianStrength = numberBetween(8, 15);
+                    System.out.println("Random Magician's strength : " + magicianStrength); // strength
+                    String spellName = askQuestion("Spell's name "); // spell's name
+                    int spellStrength = numberBetween(5, 15);  // spell's strength
+                    String magicianPhilter = askQuestion("Magician's philter "); // magician's philter
                     // Instanced Magician
                     Magician newMagician = new Magician(magicianName, magicianImage, magicianStamina, magicianStrength, spellName, spellStrength, magicianPhilter);
                     break;
+                    
+                default:
+                    System.out.println("You have to choose between Warrior or Magician... Try again !!");
+                    setCharacter();
             }
             break;
         } while(characterChoice.equalsIgnoreCase("Warrior") || characterChoice.equalsIgnoreCase("Magician"));
     }
 
+    public static String askQuestion(String question) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println(question + "?");
+        String answer = sc.nextLine();
+        System.out.println(question + " : " + answer);
+        return answer;
+    }
+
+    public static int numberBetween(int min, int max) {
+                int randomNum = (int)(Math.random() * (max - min)) + min ;
+                return randomNum;
+    }
+
 }
+
