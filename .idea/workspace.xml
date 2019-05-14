@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef4d6b6b-6741-4f4c-9589-f40fd1b59278" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Characters/Character.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Characters/Console.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/donjDrags/Characters/Magician.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/donjDrags/Characters/Magician.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/donjDrags/Characters/Warrior.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/donjDrags/Characters/Warrior.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/donjDrags/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/donjDrags/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Characters/Magician.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Characters/Magician.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Characters/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Characters/Warrior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Characters/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Characters/Console.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,8 +30,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="216">
-                  <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+                <state relative-caret-position="264">
+                  <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
                 </state>
               </provider>
             </entry>
@@ -79,7 +71,7 @@
             <entry file="file://$PROJECT_DIR$/src/Characters/Console.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="471">
-                  <caret line="47" column="74" selection-start-line="47" selection-start-column="74" selection-end-line="47" selection-end-column="74" />
+                  <caret line="45" column="22" lean-forward="true" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
@@ -115,8 +107,8 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Characters/Character.java" />
         <option value="$PROJECT_DIR$/src/Characters/Magician.java" />
-        <option value="$PROJECT_DIR$/src/Characters/Console.java" />
         <option value="$PROJECT_DIR$/src/Characters/Warrior.java" />
+        <option value="$PROJECT_DIR$/src/Characters/Console.java" />
       </list>
     </option>
   </component>
@@ -204,12 +196,12 @@
       <option name="presentableId" value="Default" />
       <updated>1557748520836</updated>
       <workItem from="1557748524200" duration="10309000" />
-      <workItem from="1557817505030" duration="15121000" />
+      <workItem from="1557817505030" duration="18131000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25430000" />
+    <option name="totallyTimeSpent" value="28440000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -309,13 +301,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Characters/Character.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Characters/Magician.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
@@ -323,10 +308,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Characters/Console.java">
+    <entry file="file://$PROJECT_DIR$/src/Characters/Character.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="47" column="74" selection-start-line="47" selection-start-column="74" selection-end-line="47" selection-end-column="74" />
+        <state relative-caret-position="240">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="75" />
         </state>
       </provider>
     </entry>
@@ -337,10 +322,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Characters/Console.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="45" column="22" lean-forward="true" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="264">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
         </state>
       </provider>
     </entry>
