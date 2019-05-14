@@ -2,21 +2,14 @@ package Characters;
 
 import Characters.Weapon.Weapon;
 
-public class Warrior {
-    private String name;
-    String image;
-    int stamina;
-    int strength;
-    Weapon weapon;
-    String shield;
+public class Warrior extends Character {
+    private Weapon weapon;
+    private String shield;
 
     public Warrior () {}
 
     public Warrior (String name, String image, int stamina, int strength, String weaponName, int weaponStrength, String shield){
-        this.name = name;
-        this.image = image;
-        this.stamina = stamina;
-        this.strength = strength;
+        super(name, image, stamina, strength);
         this.weapon = new Weapon(weaponName, weaponStrength);
         this.shield = shield;
     }
@@ -34,9 +27,7 @@ public class Warrior {
 
     //setters
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setName(String name) { this.name = name; }
 
     public void setImage(String image) {
         this.image = image;
