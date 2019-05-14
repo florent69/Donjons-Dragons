@@ -7,9 +7,10 @@ public class Console {
     int characterIndex = 0;
     public void setCharacter() {
         int characterChoice;
-        characterChoice = askInt("1- Warrior or 2- Magician ");  // Type of character
+        do {
+            characterChoice = askInt("1- Warrior or 2- Magician ");  // Type of character
+        } while ( characterChoice != 1 && characterChoice != 2 );
         createCharacter(characterChoice);
-        // System.out.println(newMagician.toString()); // test
 
     }
 
@@ -47,36 +48,37 @@ public class Console {
     }
 
     public void menuDisplay() {
-        int menuChoice;
-        do {
-            menuChoice = askInt("Welcome to the menu of this app! \n" +
+        int menuChoice = askInt("Welcome to the menu of this app! \n" +
                     "1- Display your character \n" +
                     "2- Modify a character \n" +
                     "3- Delete a character \n" +
                     "4- Set a new character \n" +
                     "5- Exit");
+
             switch(menuChoice) {
                 case 1:
-
+                    System.out.println(charactersList[characterIndex-1].toString());
                     menuDisplay();
+                    break;
                 case 2:
                     System.out.println("this function is coming soon !!");
                     break;
                 case 3:
-                    setCharacter();
+                    
+                    break;
                 case 4:
+                    setCharacter();
+                    menuDisplay();
+                    break;
+                case 5:
                     System.out.println("OK !! See you later !!");
                     break;
                 default:
                     System.out.println("... Try again !!");
                     menuDisplay();
+                    break;
             }
-            break;
-
-        } while(menuChoice == 1 || menuChoice == 2 || menuChoice == 3 || menuChoice == 4);
     }
-
-
 
     public static String askString(String question) { // method askString and get the client's answer
         Scanner sc = new Scanner(System.in);
@@ -88,8 +90,8 @@ public class Console {
     public static int askInt(String question) {
         Scanner sc = new Scanner(System.in);
         System.out.println(question + "?");
-        String answer = sc.nextLine();
-        return Integer.parseInt(answer);
+        int answer = sc.nextInt();
+        return answer;
     }
 
     public static int numberBetween(int min, int max) {
