@@ -8,6 +8,10 @@ public class Magician extends Character {
 
     public Magician () {}
 
+    public Magician (String name) {
+        super(name);
+    }
+
     public Magician (String name, String image, int stamina, int strength, String spellName, int spellStrength, String philter) {
         super(name, image, stamina, strength);
         this.spell = new Spell(spellName, spellStrength);
@@ -15,13 +19,12 @@ public class Magician extends Character {
     }
 
     public String toString() {
-        return "Your Magician's description : \n" +
-                "Magician's name : " + this.name + "\n" +
-                "Magician's image : " + this.image + "\n" +
-                "Magician's stamina : " + this.stamina + "\n" +
-                "Magician's strength : " + this.strength + "\n" +
-                "Magician's spell : " + this.spell.getName() + " ( strength : " + this.spell.getStrength() + " )\n" +
-                "Magician's philter : " + this.philter
+        return "Your Magician's description : name : " + this.name + ", " +
+                " image : " + this.image + ", " +
+                " stamina : " + this.stamina + ", " +
+                " strength : " + this.strength + ", " +
+                " spell : " + this.spell.getName() + " ( strength : " + this.spell.getStrength() + " ), " +
+                " philter : " + this.philter
                 ;
     }
 

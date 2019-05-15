@@ -3,8 +3,10 @@ package Characters;
 import java.util.Scanner;
 
 public class Console {
-    Character charactersList[] = new Character[10];
-    int characterIndex = 0;
+
+    private Character[] charactersList = new Character[10];
+    private int characterIndex = 0;
+
     public void setCharacter() {
         int characterChoice;
         do {
@@ -49,28 +51,34 @@ public class Console {
 
     public void menuDisplay() {
         int menuChoice = askInt("Welcome to the menu of this app! \n" +
-                    "1- Display your character \n" +
-                    "2- Modify a character \n" +
-                    "3- Delete a character \n" +
-                    "4- Set a new character \n" +
-                    "5- Exit");
+                "1- Display your character \n" +
+                "2- Display all characters \n" +
+                    "3- Modify a character \n" +
+                    "4- Delete a character \n" +
+                "5- Set a new character \n" +
+                "6- Exit");
 
             switch(menuChoice) {
                 case 1:
-                    System.out.println(charactersList[characterIndex-1].toString());
+                    System.out.println(charactersList[characterIndex-1]);
                     menuDisplay();
                     break;
                 case 2:
-                    System.out.println("this function is coming soon !!");
+                    displayAllCharacter();
+                    menuDisplay();
                     break;
                 case 3:
-                    
+                    System.out.println("this function is coming soon !!");
+                    menuDisplay();
                     break;
                 case 4:
+                    System.out.println("this function is coming soon !!");
+                    break;
+                case 5:
                     setCharacter();
                     menuDisplay();
                     break;
-                case 5:
+                case 6:
                     System.out.println("OK !! See you later !!");
                     break;
                 default:
@@ -80,7 +88,15 @@ public class Console {
             }
     }
 
-    public static String askString(String question) { // method askString and get the client's answer
+    public void displayAllCharacter() {
+        for(int i = 0; i < charactersList.length; i++ ) {
+            if (charactersList[i] != null) {
+                System.out.println(i + ": " + charactersList[i]);
+            }
+        }
+    }
+
+    public String askString(String question) { // method askString and get the client's answer
         Scanner sc = new Scanner(System.in);
         System.out.println(question + "?");
         String answer = sc.nextLine();

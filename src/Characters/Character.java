@@ -8,6 +8,10 @@ public class Character {
 
     public Character () {}
 
+    public Character (String name) {
+        this.name = name;
+    }
+
     public Character (String name, String image, int stamina, int strength ) {
         this.name = name;
         this.image = image;

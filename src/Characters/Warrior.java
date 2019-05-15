@@ -8,6 +8,10 @@ public class Warrior extends Character {
 
     public Warrior () {}
 
+    public Warrior (String name) {
+        super(name);
+    }
+
     public Warrior (String name, String image, int stamina, int strength, String weaponName, int weaponStrength, String shield){
         super(name, image, stamina, strength);
         this.weapon = new Weapon(weaponName, weaponStrength);
@@ -15,13 +19,12 @@ public class Warrior extends Character {
     }
 
     public String toString() {
-        return "Your Warrior's description : \n" +
-                "Warrior's name : " + this.name + "\n" +
-                "Warrior's image : " + this.image + "\n" +
-                "Warrior's stamina : " + this.stamina + "\n" +
-                "Warrior's strength : " + this.strength + "\n" +
-                "Warrior's weapon : " + this.weapon.getName() + " ( strength : " + this.weapon.getStrength() + " )\n" +
-                "Warrior's shield : " + this.shield
+        return "Your Warrior's description : name : " + this.name + ", " +
+                " image : " + this.image + ", " +
+                " stamina : " + this.stamina + ", " +
+                " strength : " + this.strength + ", " +
+                " weapon : " + this.weapon.getName() + " ( strength : " + this.weapon.getStrength() + " ), " +
+                " shield : " + this.shield
                 ;
     }
 
