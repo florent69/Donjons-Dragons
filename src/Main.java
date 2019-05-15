@@ -6,7 +6,6 @@ public class Main {
         Console console = new Console();
         console.createCharacter();
         console.menuDisplay();
-        console.setCharacter();
     }
 
 

@@ -1,5 +1,8 @@
 package Characters;
 
+import Characters.Spell.Spell;
+import Characters.Weapon.Weapon;
+
 import java.util.Scanner;
 
 public class Console {
@@ -78,8 +81,7 @@ public class Console {
                     break;
                 case 3:
                     int chooseCharacter = chooseCharacter();
-                    modifyOrDelete();
-                    modify(chooseCharacter);
+                    modifyOrDelete(chooseCharacter);
                     break;
                 case 4:
                     System.out.println("OK !! See you later !!");
@@ -114,16 +116,16 @@ public class Console {
         return choice;
     }
 
-    public int modifyOrDelete() {
+    public int modifyOrDelete(int characterIndex) {
         int choice;
         do {
             choice = askInt("1- Modify \n" + "2- Delete \n");
             switch (choice) {
                 case 1:
-                    System.out.println("Modify");
+                    modify(characterIndex);
                     break;
                 case 2:
-                    System.out.println("Delete");
+                    delete(characterIndex);
                     break;
             }
         }while (choice != 1 && choice != 2);
@@ -131,12 +133,23 @@ public class Console {
         return choice;
     }
 
-    public void modify(int characterIndex) {
-//       charactersList[characterIndex].name = askString("New name ");
-//        charactersList[characterIndex].image = askString("New image ");
-//        if ()
+    public void delete(int index) {
+        charactersList[index] = null;
+        characterIndex --;
+    }
 
-
+    public void modify(int index) {
+        String characterClass = charactersList[index].getClass().getSimpleName();
+        charactersList[index].name = askString("New name ");
+        charactersList[index].image = askString("New image ");
+        if (characterClass.equals("Warrior")) {
+            ((Warrior)charactersList[index]).setWeapon(new Weapon(askString("New weapon's name "), numberBetween(0, 10)));
+            ((Warrior)charactersList[index]).setShield(askString("New shield's name "));
+        } else if (characterClass.equals("Magician")) {
+            ((Magician)charactersList[index]).setSpell((new Spell(askString("New spell's name"), numberBetween(5, 15))));
+            ((Magician)charactersList[index]).setPhilter(askString("New philter's name "));
+        }
+        System.out.println(index + "- " + charactersList[index]);
     }
 
     public String askString(String question) { // method askString and get the client's answer

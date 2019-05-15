@@ -18,4 +18,36 @@ public class Character {
         this.stamina = stamina;
         this.strength = strength;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setStrength(int strength) {
+        this.strength = strength;
+    }
+
+    public void setStamina(int stamina) {
+        this.stamina = stamina;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public int getStrength() {
+        return strength;
+    }
+
+    public int getStamina() {
+        return stamina;
+    }
 }
