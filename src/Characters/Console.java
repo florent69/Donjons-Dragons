@@ -1,5 +1,4 @@
 package Characters;
-
 import Characters.Spell.Spell;
 import Characters.Weapon.Weapon;
 
@@ -7,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Console {
-    private ArrayList<Character> charactersList = new ArrayList(); // Collection ArrayList //
+    private ArrayList<Character> charactersList = new ArrayList<>(); // Collection ArrayList //
 
     public void setCharacter() {
         int characterChoice;
@@ -30,7 +29,6 @@ public class Console {
                 // Instanced warrior
                 Warrior newWarrior = new Warrior(characterName, characterImage, warriorStamina, warriorStrength, weaponName, weaponStrength, warriorShield);
                 charactersList.add(newWarrior); // collection ArrayList
-                System.out.println(newWarrior);
                 break;
             case 2:
                 int magicianStamina = numberBetween(3, 6);
@@ -43,7 +41,6 @@ public class Console {
                 // Instanced magician
                 Magician newMagician = new Magician(characterName, characterImage, magicianStamina, magicianStrength, spellName, spellStrength, magicianPhilter);
                 charactersList.add(newMagician);
-                System.out.println(newMagician);
                 break;
             default:
                 System.out.println("You have to choose between Warrior or Magician... Try again !!");
@@ -72,6 +69,7 @@ public class Console {
             switch(menuChoice) {
                 case 1:
                     setCharacter();
+                    System.out.println(charactersList.get(charactersList.size() - 1)); // display last character in the List
                     break;
                 case 2:
                     displayAllCharacters();
@@ -81,7 +79,7 @@ public class Console {
                     modifyOrDelete(chooseCharacter);
                     break;
                 case 4:
-                    System.out.println("OK !! See you later !!");
+                    System.out.println("OK !! Let's start !!");
                     break;
                 default:
                     System.out.println("... Try again !!");
@@ -175,5 +173,22 @@ public class Console {
         return randomNum;
     }
 
+    // ****************Creation of the board game ********************************//////////////////
+    private ArrayList<String> boardGame = new ArrayList<>();
+
+    public void setboardGame(int size) {
+        for (int i = 0; i < size; i++) {
+            int boardCase = numberBetween(1, 3);
+            switch (boardCase) {
+                case 1:
+                    boardGame.add("free");
+                case 2:
+                    boardGame.add("bonus");
+                case 3:
+                    boardGame.add("enemy");
+            }
+        }
+        System.out.println(boardGame);
+    }
 
 }
