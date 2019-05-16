@@ -3,13 +3,11 @@ package Characters;
 import Characters.Spell.Spell;
 import Characters.Weapon.Weapon;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Console {
-
-    private Character[] charactersList = new Character[10];
-    private int characterIndex = 0;
-
+    private ArrayList<Character> charactersList = new ArrayList(); // Collection ArrayList //
 
     public void setCharacter() {
         int characterChoice;
@@ -31,8 +29,8 @@ public class Console {
                 String warriorShield = askString("Shield's name "); // Character's shield
                 // Instanced warrior
                 Warrior newWarrior = new Warrior(characterName, characterImage, warriorStamina, warriorStrength, weaponName, weaponStrength, warriorShield);
-                charactersList[characterIndex] = newWarrior;
-                characterIndex ++;
+                charactersList.add(newWarrior); // collection ArrayList
+                System.out.println(newWarrior);
                 break;
             case 2:
                 int magicianStamina = numberBetween(3, 6);
@@ -44,8 +42,8 @@ public class Console {
                 String magicianPhilter = askString("Magician's philter "); // magician's philter
                 // Instanced magician
                 Magician newMagician = new Magician(characterName, characterImage, magicianStamina, magicianStrength, spellName, spellStrength, magicianPhilter);
-                charactersList[characterIndex] = newMagician;
-                characterIndex ++;
+                charactersList.add(newMagician);
+                System.out.println(newMagician);
                 break;
             default:
                 System.out.println("You have to choose between Warrior or Magician... Try again !!");
@@ -56,11 +54,9 @@ public class Console {
 
     public void createCharacter() {
         Warrior warrior = new Warrior("Ced", "photo", 10, 10, "knife", 2, "wooden shield");
-        charactersList[characterIndex] = warrior;
-        characterIndex ++;
+        charactersList.add(warrior);
         Magician magician = new Magician("Tom", "tof", 6, 15, "fire ball", 2, "health");
-        charactersList[characterIndex] = magician;
-        characterIndex ++;
+        charactersList.add(magician);
     }
 
     public void menuDisplay()
@@ -76,7 +72,6 @@ public class Console {
             switch(menuChoice) {
                 case 1:
                     setCharacter();
-                    System.out.println(charactersList[characterIndex - 1]);
                     break;
                 case 2:
                     displayAllCharacters();
@@ -96,9 +91,9 @@ public class Console {
     }
 
     public void displayAllCharacters() {
-        for(int i = 0; i < charactersList.length; i++ ) {
-            if (charactersList[i] != null) {
-                System.out.println(i + ": " + charactersList[i]);
+        for(int i = 0; i < charactersList.size(); i++ ) {
+            if (charactersList.get(i) != null) {
+                System.out.println(i + ": " + charactersList.get(i));
             }
         }
     }
@@ -107,10 +102,10 @@ public class Console {
         int choice;
         int count = 0;
         do {
-            for(int i = 0; i < charactersList.length; i++ ) {
-                if (charactersList[i] != null) {
+            for(int i = 0; i < charactersList.size(); i++ ) {
+                if (charactersList.get(i) != null) {
                     count ++;
-                    System.out.println(i + ": " + charactersList[i]);
+                    System.out.println(i + ": " + charactersList.get(i));
                 }
             }
             choice = askInt("Which character ");
@@ -136,25 +131,25 @@ public class Console {
     }
 
     public void delete(int index) {
-        charactersList[index] = null;
-        characterIndex --;
+        charactersList.remove(index);
     }
 
     public void modify(int index) {
-        String characterClass = charactersList[index].getClass().getSimpleName();
-        charactersList[index].name = askString("New name ");
-        charactersList[index].image = askString("New image ");
+        String characterClass = charactersList.get(index).getClass().getSimpleName();
+        charactersList.get(index).setName(askString("New name "));
+        charactersList.get(index).setImage(askString("New image "));
         if (characterClass.equals("Warrior")) {
-            ((Warrior)charactersList[index]).setWeapon(new Weapon(askString("New weapon's name "), numberBetween(0, 10)));
-            ((Warrior)charactersList[index]).setShield(askString("New shield's name "));
+            ((Warrior)charactersList.get(index)).setWeapon(new Weapon(askString("New weapon's name "), numberBetween(0, 10)));
+            ((Warrior)charactersList.get(index)).setShield(askString("New shield's name "));
         } else if (characterClass.equals("Magician")) {
-            ((Magician)charactersList[index]).setSpell((new Spell(askString("New spell's name"), numberBetween(5, 15))));
-            ((Magician)charactersList[index]).setPhilter(askString("New philter's name "));
+            ((Magician)charactersList.get(index)).setSpell((new Spell(askString("New spell's name"), numberBetween(5, 15))));
+            ((Magician)charactersList.get(index)).setPhilter(askString("New philter's name "));
         }
-        System.out.println(index + "- " + charactersList[index]);
+        System.out.println(index + "- " + charactersList.get(index));
     }
 
-    public String askString(String question) { // method askString and get the client's answer
+    public String askString(String question)
+    {  // method askString and get the client's answer
         Scanner sc = new Scanner(System.in);
         System.out.println(question + "?");
         String answer = sc.nextLine();
