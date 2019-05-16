@@ -10,6 +10,7 @@ public class Console {
     private Character[] charactersList = new Character[10];
     private int characterIndex = 0;
 
+
     public void setCharacter() {
         int characterChoice;
         do {
@@ -62,10 +63,11 @@ public class Console {
         characterIndex ++;
     }
 
-    public void menuDisplay() {
+    public void menuDisplay()
+            {
         int menuChoice;
         do {
-        menuChoice = askInt("Welcome to the menu of this app! \n" +
+        menuChoice = askInt("What do you want to do ? \n" +
                 "1- Set a new character \n" +
                 "2- Display all characters \n" +
                 "3- Modify/Delete a character \n" +
@@ -159,10 +161,17 @@ public class Console {
         return answer;
     }
 
-    public static int askInt(String question) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println(question + "?");
-        int answer = sc.nextInt();
+    public static int askInt(String question)
+    {
+        int answer = 0 ;
+        try {
+            Scanner sc = new Scanner(System.in);
+            System.out.println(question + "?");
+            answer = sc.nextInt();
+        } catch (Exception e) {
+            System.out.println("You're not taping a number...");
+            answer = askInt(question);
+        }
         return answer;
     }
 

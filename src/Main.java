@@ -7,8 +7,6 @@ public class Main {
         console.createCharacter();
         console.menuDisplay();
     }
-
-
 }
 
 
