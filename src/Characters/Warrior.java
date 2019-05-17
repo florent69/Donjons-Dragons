@@ -19,10 +19,7 @@ public class Warrior extends Character {
     }
 
     public String toString() {
-        return "Your Warrior's description : name : " + this.name + ", " +
-                " image : " + this.image + ", " +
-                " stamina : " + this.stamina + ", " +
-                " strength : " + this.strength + ", " +
+        return super.toString() +
                 " weapon : " + this.weapon.getName() + " ( strength : " + this.weapon.getStrength() + " ), " +
                 " shield : " + this.shield
                 ;

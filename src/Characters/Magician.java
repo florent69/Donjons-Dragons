@@ -19,10 +19,7 @@ public class Magician extends Character {
     }
 
     public String toString() {
-        return "Your Magician's description : name : " + this.name + ", " +
-                " image : " + this.image + ", " +
-                " stamina : " + this.stamina + ", " +
-                " strength : " + this.strength + ", " +
+        return super.toString() +
                 " spell : " + this.spell.getName() + " ( strength : " + this.spell.getStrength() + " ), " +
                 " philter : " + this.philter
                 ;

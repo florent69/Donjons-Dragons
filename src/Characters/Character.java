@@ -19,6 +19,14 @@ public abstract class Character {
         this.strength = strength;
     }
 
+    public String toString() {
+        return "Your Character's description : name : " + this.name + ", " +
+                " image : " + this.image + ", " +
+                " stamina : " + this.stamina + ", " +
+                " strength : " + this.strength + ", "
+                ;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
